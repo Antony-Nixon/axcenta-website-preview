@@ -1,7 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
   const fontLink = document.createElement('link'); fontLink.rel = 'stylesheet'; fontLink.href = 'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap'; document.head.appendChild(fontLink);
   document.querySelectorAll('.brand').forEach((brand) => { brand.innerHTML = '<img class="official-logo" src="assets/axcenta-official-logo-v2.png" alt="Axcenta">'; });
-  document.querySelectorAll('.footer-grid').forEach((footer) => { if (!footer.querySelector('.footer-address')) { const address = document.createElement('p'); address.className = 'footer-address'; address.textContent = 'Axcenta ITES (P) Ltd., 35/1612-A, South Janatha Road, Palarivattom, Kochi - 682 025. Kerala.'; footer.appendChild(address); } });
+  document.querySelectorAll('.footer-grid').forEach((footer) => {
+    const addressText = 'Axcenta ITES (P) Ltd., 35/1612-A, South Janatha Road, Palarivattom, Kochi - 682 025. Kerala.';
+    if (!footer.textContent.includes('South Janatha Road')) {
+      const address = document.createElement('p');
+      address.className = 'footer-address';
+      address.textContent = addressText;
+      footer.appendChild(address);
+    }
+  });
   document.querySelectorAll('img').forEach((image) => {
     if (image.src.includes('/files/interconnected.jfif')) image.src = 'assets/people-systems-v2.png';
     if (image.src.includes('/files/servers.png')) image.src = 'assets/systems-architecture-v2.png';
