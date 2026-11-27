@@ -3,7 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.brand').forEach((brand) => { brand.innerHTML = '<img class="official-logo" src="assets/axcenta-official-logo-v2.png" alt="Axcenta">'; });
   document.querySelectorAll('.footer-grid').forEach((footer) => {
     const addressText = 'Axcenta ITES (P) Ltd., 35/1612-A, South Janatha Road, Palarivattom, Kochi - 682 025. Kerala.';
-    if (!footer.textContent.includes('South Janatha Road')) {
+    const addressNodes = [...footer.querySelectorAll('.footer-address, p')].filter((node) => node.textContent.includes('South Janatha Road'));
+    addressNodes.slice(1).forEach((node) => node.remove());
+    if (!addressNodes.length) {
       const address = document.createElement('p');
       address.className = 'footer-address';
       address.textContent = addressText;
@@ -81,3 +83,4 @@ document.addEventListener('DOMContentLoaded', () => {
   resize();
   draw();
 })();
+
