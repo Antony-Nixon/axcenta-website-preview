@@ -54,3 +54,36 @@ body{font-family:"Manrope","Avenir Next","Segoe UI",sans-serif;letter-spacing:-.
 .story-grid .visual{justify-self:start;width:min(100%,620px)}
 @media(max-width:800px){.container{width:calc(100% - 40px)}.narrow{max-width:none}.hero-grid,.story-grid{gap:35px}.hero-grid .visual,.story-grid .visual{width:100%}}
 
+/* site-wide alignment pass: every page uses one editorial grid and shared left edges */
+.container{width:min(1380px,calc(100% - 96px));margin-inline:auto}
+.narrow{width:min(1120px,100%);max-width:none;margin-left:0;margin-right:0}
+.hero-grid,.story-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(48px,6vw,92px);align-items:center}
+.hero-grid>*,.story-grid>*{min-width:0}
+.hero-grid>div:first-child,.story-grid>div:last-child{text-align:left}
+.hero-grid .visual,.story-grid .visual{width:100%;max-width:620px}
+.hero-grid .visual{justify-self:end}
+.story-grid .visual{justify-self:start}
+.section> .container>h2,.section> .container>.eyebrow,.story> .container>h2,.page> .container>h1{margin-left:0;margin-right:0}
+.section h2,.story h2,.cta h2{max-width:980px}
+.cards{width:100%;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+.cards article{height:100%;display:flex;flex-direction:column;align-items:flex-start;text-align:left}
+.cards article p{margin-top:auto}
+.panel{width:100%;text-align:left}
+.panel+.panel{margin-top:36px}
+.timeline{width:100%}
+.timeline-note{text-align:left}
+.team-section{margin-top:0}
+.team-section>.container>h2{max-width:900px;margin-left:0;margin-right:0}
+.team-grid{width:100%;align-items:start}
+.team-grid article{text-align:left}
+.team-grid h3{margin-top:14px}
+.team-grid p{max-width:240px;margin-left:0;margin-right:0}
+.form-wrap{width:min(980px,100%);max-width:none;margin-left:0;margin-right:0}
+.cta .container{width:min(1380px,calc(100% - 96px));margin-inline:auto;text-align:left}
+.cta h2{max-width:1100px}
+.cta p{max-width:1100px}
+.footer-grid{width:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.6fr);align-items:start;gap:40px}
+.footer-grid>span,.footer-grid>div,.footer-grid>p{min-width:0}
+@media(max-width:1100px){.container,.cta .container{width:calc(100% - 64px)}.hero-grid,.story-grid{gap:48px}.team-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:800px){.container,.cta .container{width:calc(100% - 40px)}.narrow{width:100%}.hero-grid,.story-grid{grid-template-columns:1fr;gap:35px}.hero-grid .visual,.story-grid .visual{width:100%;max-width:none}.cards{grid-template-columns:1fr}.team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.footer-grid{display:block}.footer-grid>*+*{margin-top:14px}}
+
