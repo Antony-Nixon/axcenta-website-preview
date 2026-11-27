@@ -92,7 +92,7 @@ body{font-family:"Manrope","Avenir Next","Segoe UI",sans-serif;letter-spacing:-.
 /* mobile refinement: preserve the grid while tightening type, rhythm, and touch targets */
 @media(max-width:600px){
   html,body{overflow-x:hidden}
-  .container,.cta .container,.narrow,.hero.compact .container.narrow{width:calc(100% - 32px)}
+  .container,.cta .container,.narrow,.hero.compact .container.narrow{width:100%;padding-inline:16px}
   .site-header{position:sticky}
   .nav-wrap{min-height:68px}
   .brand{min-width:0;width:auto}
@@ -104,8 +104,8 @@ body{font-family:"Manrope","Avenir Next","Segoe UI",sans-serif;letter-spacing:-.
   .lead{max-width:100%;font-size:18px;line-height:1.5}
   .actions{gap:10px;margin-top:22px}
   .btn{min-height:50px;padding:13px 18px;display:inline-flex;align-items:center;justify-content:center}
-  .section,.story,.page{padding:54px 0}
-  .page .hero.compact + .section{padding-top:42px}
+  .section,.story,.page{padding:48px 0 56px}
+  .page .hero.compact + .section{padding-top:28px}
   .section h2,.story h2,.cta h2{font-size:clamp(30px,9vw,42px);line-height:1.06}
   .cards{gap:14px}
   .cards article{padding:22px}
@@ -113,7 +113,7 @@ body{font-family:"Manrope","Avenir Next","Segoe UI",sans-serif;letter-spacing:-.
   .cards p,.panel p,.team-grid p{font-size:16px;line-height:1.55}
   .story-grid{gap:28px}
   .visual{padding:18px;border-radius:18px}
-  .form-wrap{width:100%}
+  .form-wrap{width:100%;padding-inline:16px}
   .form-grid{gap:16px}
   .form-grid label,form>label{gap:6px;margin-bottom:16px;font-size:16px}
   .form-grid input,.form-grid select,.form-grid textarea,form>label select,form>label textarea{min-height:52px;padding:13px 14px;font-size:16px}
